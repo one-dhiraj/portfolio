@@ -4,8 +4,14 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { MdChevronLeft, MdChevronRight } from "react-icons/md";
+import React from "react";
+import { ProjectsInterface } from "../components/util";
 
-const Projects = ({projects}) => {
+interface ProjectListProps {
+  projects: ProjectsInterface;
+}
+
+const Projects:React.FC<ProjectListProps> = ({projects}) => {
   
   return (
     <Box mx="auto" width={{md: "80%"}} pt="14">

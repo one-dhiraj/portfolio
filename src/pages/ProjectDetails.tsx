@@ -1,6 +1,11 @@
 import { Box, Image, Text, Heading, Badge, Flex } from "@chakra-ui/react";
+import { ProjectInterface } from "../components/util";
+import React from "react";
 
-const ProjectDetails = ({project}) => {
+interface ProjectDetailsProps {
+  project: ProjectInterface;
+}
+const ProjectDetails:React.FC<ProjectDetailsProps> = ({project}) => {
   return (
     <Box mx="auto" py={{base: 10, md: 6}} px={{md: 4}}>
       <Flex gap={4} flexDirection={{base: "column-reverse", md: "row"}}>
