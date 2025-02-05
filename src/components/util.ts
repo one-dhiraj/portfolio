@@ -1,4 +1,5 @@
 export interface ProjectInterface {
+    link: string;
     icon: string;
     cover: string;
     tag: string[];

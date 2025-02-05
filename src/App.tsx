@@ -10,19 +10,36 @@ import Projects from './pages/Projects';
 import ProjectDetails from './pages/ProjectDetails';
 import AutowallPrivacy from './pages/Other pages/AutowallPrivacy';
 
-const projects = {
+import psicon from './assets/psreact-icon.png'
+import psthumb from './assets/psreact-thumb.jpg'
+import lsicon from './assets/lorestore-icon.jpg'
+import lsthumb from './assets/lorestore-thumb.jpeg'
+import ccicon from './assets/collabchain-icon.jpg'
+import ccthumb from './assets/collabchain-thumb.jpg'
+import awicon from './assets/autowall-icon.jpg'
+import awthumb from './assets/autowall-thumb.png'
+
+const projectsData = {
   autowall: {
-    icon: "https://github.com/one-dhiraj/portfolio/blob/main/src/assets/autowall-icon.jpg?raw=true",
-    cover:"https://github.com/one-dhiraj/portfolio/blob/main/src/assets/autowall-thumb.png?raw=true",
+    link: "https://play.google.com/store/apps/details?id=com.autowall",
+    icon: awicon,
+    cover:awthumb,
     tag:["React Native"],
     title:"AutoWall",
     intro:"Auto Wall makes your device come alive by automatically changing wallpapers based on your preferences. Whether you want to showcase your favorite memories, stunning landscapes, or curated images from your Google Drive, Auto Wall gives you complete control over your wallpapers.",
-    insp: "",
-    jrny: []
+    insp: "I have always been fascinated by personalizing my devices to my taste. And a wallpaper is not just an aesthetic choice, in my opinion, it is a reflection of one's personality. With this app, I am trying to provide a new option .",
+    jrny: [
+      "Coming from a react.js background it is relatively easier to transition into react native I believe. After all that's the purpose React native, to provide web developers to use their foundations of react to develop cross platform apps. But that doesn't mean one is going to find it all smooth sailing.",
+      "In fact, setting up the work environment is always a chore for developers stepping into new areas. Fortunately, a good documentation provides that sense of direction one needs, it is like a map if one knows how to read one. And react native comes with a good documentation.",
+      "While a lot of the things learnt from react.js comes in handy while working with react native, one needs to learn many new things too. How each operating system works, the things they allow and those they don't. For instance, this app of mine, won't work for ios. Because Apple does not allow programatically change wallpapers :(",
+      "And then comes another big thing to get used to: the integration of 3rd party libraries into the code. Many of them need tinkering with the native files for the individual platforms, modifying the code. And one needs to have an understanding of what they are doing, the changes they are introducing to prevent errors. It is very easy to run into those I have seen.",
+      "But the learning doesn't just end when the app is developed and ready. No, now comes the next step, releasing it on the app stores. One needs to jump through a lot of hoops to get their apps & games out into the public. But that's a good thing, the platforms are thorough in their process to make sure the end user does not receive any harm from a malicious application. It is daunting yes, so much more complicated than building a web app, but it is also that much more satisfactory. Your own app that users search for and use and share with their folks!"
+    ]
   },
   collabchain: {
-    icon: "https://github.com/one-dhiraj/portfolio/blob/main/src/assets/collabchain-icon.jpg?raw=true",
-    cover:"https://github.com/one-dhiraj/portfolio/blob/main/src/assets/collabchain-thumb.jpg?raw=true",
+    link: "",
+    icon: ccicon,
+    cover:ccthumb,
     tag:["Solidity", "MongoDB", "Node.JS", "React.JS"],
     title:"Collab Chain",
     intro:"Welcome to Collab Chain, an online platform for researchers all across the world to collaborate on any research work, manage their resources, all with the security of blockchain technology.",
@@ -36,8 +53,9 @@ const projects = {
   ]
   },
   lorestore: {
-    icon: "https://github.com/one-dhiraj/portfolio/blob/main/src/assets/lorestore-icon.jpg?raw=true",
-    cover:"https://github.com/one-dhiraj/portfolio/blob/main/src/assets/lorestore-thumb.jpeg?raw=true",
+    link: "",
+    icon: lsicon,
+    cover:lsthumb,
     tag:["MongoDB", "Node.JS", "React.JS", "TailwindCSS"],
     title:"The Lore Store",
     intro:"Introducing Lore Store, an engaging online book store where readers can explore an extensive collection of literary treasures. With a user-friendly interface, seamless navigation, and secure transactions via Stripe, Lore Store offers an immersive browsing experience.",
@@ -51,8 +69,9 @@ const projects = {
   ]
   },
   psreact: {
-    icon: "https://github.com/one-dhiraj/portfolio/blob/main/src/assets/psreact-icon.png?raw=true",
-    cover:"https://github.com/one-dhiraj/portfolio/blob/main/src/assets/psreact-thumb.jpg?raw=true",
+    link: "",
+    icon: psicon,
+    cover:psthumb,
     tag:["React.JS","TailwindCSS"],
     title:"PS React",
     intro:"Welcome to PS React, a platform built for casual gaming enthusiasts. Dive into a world of entertainment with classic games like Pokeduel, Hangman and Lights Out, designed to challenge and delight. Experience fun, sharpen your skills, with fellow gamers at PS React today.",
@@ -76,11 +95,8 @@ export default function App() {
         <Route path="/" element={<Home />} />
         <Route path="/skills" element={<Skill />} />
         <Route path="/autowall-privacy-policy" element={<AutowallPrivacy />} />
-        <Route path="/projects" element={<Projects projects={projects} />} />
-        <Route path="/projects/autowall" element={<ProjectDetails project={projects['autowall']}/> } />
-        <Route path="/projects/psreact" element={<ProjectDetails project={projects['psreact']}/> } />
-        <Route path="/projects/collabchain" element={<ProjectDetails project={projects['collabchain']}/> } />
-        <Route path="/projects/lorestore" element={<ProjectDetails project={projects['lorestore']}/> } />
+        <Route path="/projects" element={<Projects projects={projectsData} />} />
+        <Route path="/projects/:projectid" element={<ProjectDetails projectsData={projectsData}/> } />
         <Route path="/experience" element={<Experience />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
