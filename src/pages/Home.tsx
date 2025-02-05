@@ -47,7 +47,7 @@ export default function Home() {
           position="absolute"
           top="5%"
         />
-          <Link to="https://leetcode.com/dhirajksharma" target='_blank'>
+          <Link to="https://leetcode.com/u/one-dhiraj" target='_blank'>
             <Icon position={"absolute"} padding={1} top="11%" left={{base: "5%", md: "7%"}} as={SiLeetcode} boxSize={{base: 9, md: 10}} bg="white" borderRadius={20} />
           </Link>
           <Link to="https://play.google.com/store/apps/dev?id=5273581280074097918" target='_blank'>
@@ -57,7 +57,7 @@ export default function Home() {
           <Link to="mailto:dhirajksharma.official@gmail.com" target='_blank'>
             <Icon position={"absolute"} padding={1} top={{base: "10%", md: "11%"}} right="10%" as={FaEnvelope} boxSize={{base: 9, md: 10}} bg="white" borderRadius={5} />
           </Link>
-          <Link to="https://linkedin.com/in/dhirajksharma29" target='_blank'>
+          <Link to="https://linkedin.com/in/one-dhiraj" target='_blank'>
             <Icon position={"absolute"} padding={1} top="50%" left="-3%" as={FaLinkedinIn} boxSize={{base: 9, md: 10}} bg="white" />
           </Link>
           <Link to="https://github.com/one-dhiraj" target='_blank'>
